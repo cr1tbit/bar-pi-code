@@ -1,0 +1,11 @@
+[Unit]
+Description=Slides daemon
+
+[Service]
+ExecStart=/opt/slides/slides.sh
+Restart=on-failure
+TimeoutSec=10
+
+
+[Install]
+WantedBy=multi-user.target 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Barcode daemon
+
+[Service]
+Environment="PYTHONPATH=/opt/barcode-daemon"
+ExecStart=python3 -m barcode_daemon %I
+Restart=on-failure
+TimeoutSec=10
+
+
+[Install]
+WantedBy=multi-user.target 
