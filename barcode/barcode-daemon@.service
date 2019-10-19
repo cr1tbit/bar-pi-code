@@ -3,7 +3,8 @@ Description=Barcode daemon
 
 [Service]
 Environment="PYTHONPATH=/opt/barcode-daemon"
-ExecStart=python3 -m barcode_daemon %I
+Environment="SCANNER_NAME=%I"
+ExecStart=python3 -m barcode_daemon $SCANNER_NAME
 Restart=on-failure
 TimeoutSec=10
 
